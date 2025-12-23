@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #0b1c2d, #1e1e1e);
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+/* HEADER */
+header {
+    background: #0b1c2d;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #c8102e;
+}
+
+header h1 {
+    color: #c8102e;
+    font-weight: 700;
+}
+
+nav a {
+    color: #ffffff;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #c8102e;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero span {
+    color: #c8102e;
+}
+
+.search-box {
+    margin-top: 30px;
+}
+
+.search-box input {
+    width: 60%;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* RESULTATS */
+#results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 50px;
+}
+
+/* CARTE JOUEUR */
+.card {
+    background: #ffffff;
+    color: #1e1e1e;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    color: #c8102e;
+    margin-bottom: 10px;
+}
+
+.stats {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* QUIZ */
+.quiz {
+    background: #0b1c2d;
+    padding: 50px;
+    margin: 40px;
+    border-radius: 20px;
+}
+
+.quiz h2 {
+    color: #c8102e;
+    margin-bottom: 20px;
+}
+
+.quiz button {
+    background: #c8102e;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.quiz button:hover {
+    background: #a00d24;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0b1c2d;
+    border-top: 2px solid #c8102e;
+    margin-top: 40px;
+}
