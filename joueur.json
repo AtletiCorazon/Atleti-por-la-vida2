@@ -1,343 +1,313 @@
 [
-{
-    nom: "Antoine Griezmann",
-    surnom: "Le Petit Prince",
-    role: "Attaquant",
-    nationalite: "France",
-    image: "images/griezmann.jpg",
-    description: "Joueur emblématique de l’Atlético Madrid moderne, Antoine Griezmann est connu pour son intelligence de jeu, son sens du collectif et sa capacité à être décisif dans les grands moments.",
-    stats: {
-        saisons: "2014–2019, 2021–",
-        matchs: 380,
-        buts: 170,
-        passes: 80,
-        trophees: ["Liga", "Europa League", "Supercoupe d’Europe"]
+  {
+    "nom": "Antoine Griezmann",
+    "surnom": "Le Petit Prince",
+    "role": "Attaquant",
+    "nationalite": "France",
+    "image": "images/griezmann.jpg",
+    "description": "Joueur emblématique de l’Atlético Madrid moderne, Antoine Griezmann est connu pour son intelligence de jeu, son sens du collectif et sa capacité à être décisif dans les grands moments.",
+    "stats": {
+      "saisons": "2014–2019, 2021–",
+      "matchs": 380,
+      "buts": 170,
+      "passes": 80,
+      "trophees": ["Liga", "Europa League", "Supercoupe d’Europe"]
     }
-},
-
-{
-    nom: "Luis Suárez",
-    surnom: "El Pistolero",
-    role: "Attaquant",
-    nationalite: "Uruguay",
-    image: "images/suarez.jpg",
-    description: "Arrivé en 2020, Luis Suárez a été décisif dans la conquête de la Liga 2020-2021, apportant son expérience, son instinct de buteur et son mental de gagnant.",
-    stats: {
-        saisons: "2020–2022",
-        matchs: 83,
-        buts: 34,
-        passes: 6,
-        trophees: ["Liga"]
+  },
+  {
+    "nom": "Luis Suárez",
+    "surnom": "El Pistolero",
+    "role": "Attaquant",
+    "nationalite": "Uruguay",
+    "image": "images/suarez.jpg",
+    "description": "Arrivé en 2020, Luis Suárez a été décisif dans la conquête de la Liga 2020-2021, apportant son expérience, son instinct de buteur et son mental de gagnant.",
+    "stats": {
+      "saisons": "2020–2022",
+      "matchs": 83,
+      "buts": 34,
+      "passes": 6,
+      "trophees": ["Liga"]
     }
-},
-
-{
-    nom: "Fernando Torres",
-    surnom: "El Niño",
-    role: "Attaquant",
-    nationalite: "Espagne",
-    image: "images/torres.jpg",
-    description: "Formé au club, Fernando Torres incarne l’identité rojiblanca. Capitaine, buteur et symbole de fidélité, il est une légende absolue de l’Atlético Madrid.",
-    stats: {
-        saisons: "2001–2007, 2015–2018",
-        matchs: 404,
-        buts: 129,
-        passes: 19,
-        trophees: ["Europa League"]
+  },
+  {
+    "nom": "Fernando Torres",
+    "surnom": "El Niño",
+    "role": "Attaquant",
+    "nationalite": "Espagne",
+    "image": "images/torres.jpg",
+    "description": "Formé au club, Fernando Torres incarne l’identité rojiblanca. Capitaine, buteur et symbole de fidélité, il est une légende absolue de l’Atlético Madrid.",
+    "stats": {
+      "saisons": "2001–2007, 2015–2018",
+      "matchs": 404,
+      "buts": 129,
+      "passes": 19,
+      "trophees": ["Europa League"]
     }
-},
-
-{
-    nom: "Diego Forlán",
-    surnom: "El Cachavacha",
-    role: "Attaquant",
-    nationalite: "Uruguay",
-    image: "images/forlan.jpg",
-    description: "Buteur d’exception, Diego Forlán a marqué l’histoire du club avec son pied droit et son leadership, notamment lors de la victoire en Europa League 2010.",
-    stats: {
-        saisons: "2007–2011",
-        matchs: 198,
-        buts: 96,
-        passes: 12,
-        trophees: ["Europa League", "Supercoupe d’Europe"]
+  },
+  {
+    "nom": "Diego Forlán",
+    "surnom": "El Cachavacha",
+    "role": "Attaquant",
+    "nationalite": "Uruguay",
+    "image": "images/forlan.jpg",
+    "description": "Buteur d’exception, Diego Forlán a marqué l’histoire du club avec son pied droit et son leadership, notamment lors de la victoire en Europa League 2010.",
+    "stats": {
+      "saisons": "2007–2011",
+      "matchs": 198,
+      "buts": 96,
+      "passes": 12,
+      "trophees": ["Europa League", "Supercoupe d’Europe"]
     }
-},
-
-{
-    nom: "Radamel Falcao",
-    surnom: "El Tigre",
-    role: "Attaquant",
-    nationalite: "Colombie",
-    image: "images/falcao.jpg",
-    description: "Attaquant redoutable, Falcao a été l’un des meilleurs buteurs d’Europe sous Simeone, jouant un rôle clé dans les succès européens.",
-    stats: {
-        saisons: "2011–2013",
-        matchs: 91,
-        buts: 70,
-        passes: 9,
-        trophees: ["Europa League", "Supercoupe d’Europe"]
+  },
+  {
+    "nom": "Radamel Falcao",
+    "surnom": "El Tigre",
+    "role": "Attaquant",
+    "nationalite": "Colombie",
+    "image": "images/falcao.jpg",
+    "description": "Attaquant redoutable, Falcao a été l’un des meilleurs buteurs d’Europe sous Simeone, jouant un rôle clé dans les succès européens.",
+    "stats": {
+      "saisons": "2011–2013",
+      "matchs": 91,
+      "buts": 70,
+      "passes": 9,
+      "trophees": ["Europa League", "Supercoupe d’Europe"]
     }
-},
-
-{
-    nom: "Kevin Gameiro",
-    surnom: "",
-    role: "Attaquant",
-    nationalite: "France",
-    image: "images/gameiro.jpg",
-    description: "Attaquant rapide et efficace, Kevin Gameiro a été précieux dans les compétitions européennes, notamment lors de la victoire en Europa League 2018.",
-    stats: {
-        saisons: "2016–2018",
-        matchs: 109,
-        buts: 27,
-        passes: 11,
-        trophees: ["Europa League"]
+  },
+  {
+    "nom": "Kevin Gameiro",
+    "surnom": "",
+    "role": "Attaquant",
+    "nationalite": "France",
+    "image": "images/gameiro.jpg",
+    "description": "Attaquant rapide et efficace, Kevin Gameiro a été précieux dans les compétitions européennes, notamment lors de la victoire en Europa League 2018.",
+    "stats": {
+      "saisons": "2016–2018",
+      "matchs": 109,
+      "buts": 27,
+      "passes": 11,
+      "trophees": ["Europa League"]
     }
-},
-
-{
-    nom: "Julián Álvarez",
-    surnom: "La Araña",
-    role: "Attaquant",
-    nationalite: "Argentine",
-    image: "images/alvarez.jpg",
-    description: "Attaquant moderne, mobile et intelligent, Julián Álvarez représente l’avenir offensif de l’Atlético Madrid.",
-    stats: {
-        saisons: "2024–",
-        matchs: "En cours",
-        buts: "En cours",
-        passes: "En cours",
-        trophees: []
+  },
+  {
+    "nom": "Julián Álvarez",
+    "surnom": "La Araña",
+    "role": "Attaquant",
+    "nationalite": "Argentine",
+    "image": "images/alvarez.jpg",
+    "description": "Attaquant moderne, mobile et intelligent, Julián Álvarez représente l’avenir offensif de l’Atlético Madrid.",
+    "stats": {
+      "saisons": "2024–",
+      "matchs": "En cours",
+      "buts": "En cours",
+      "passes": "En cours",
+      "trophees": []
     }
-},
-
-/* ===================== MILIEUX ===================== */
-
-{
-    nom: "Gabi",
-    surnom: "El Capitán",
-    role: "Milieu défensif",
-    nationalite: "Espagne",
-    image: "images/gabi.jpg",
-    description: "Leader du vestiaire et capitaine historique, Gabi a incarné les valeurs de combat et de solidarité chères à Simeone.",
-    stats: {
-        saisons: "2011–2018",
-        matchs: 417,
-        buts: 17,
-        passes: 28,
-        trophees: ["Liga", "Europa League x2"]
+  },
+  {
+    "nom": "Gabi",
+    "surnom": "El Capitán",
+    "role": "Milieu défensif",
+    "nationalite": "Espagne",
+    "image": "images/gabi.jpg",
+    "description": "Leader du vestiaire et capitaine historique, Gabi a incarné les valeurs de combat et de solidarité chères à Simeone.",
+    "stats": {
+      "saisons": "2011–2018",
+      "matchs": 417,
+      "buts": 17,
+      "passes": 28,
+      "trophees": ["Liga", "Europa League x2"]
     }
-},
-
-{
-    nom: "Saúl Ñíguez",
-    surnom: "Saúl",
-    role: "Milieu",
-    nationalite: "Espagne",
-    image: "images/saul.jpg",
-    description: "Milieu polyvalent, formé au club, Saúl a été un pilier de l’équipe pendant plusieurs saisons.",
-    stats: {
-        saisons: "2012–2023",
-        matchs: 427,
-        buts: 48,
-        passes: 26,
-        trophees: ["Liga", "Europa League x2"]
+  },
+  {
+    "nom": "Saúl Ñíguez",
+    "surnom": "Saúl",
+    "role": "Milieu",
+    "nationalite": "Espagne",
+    "image": "images/saul.jpg",
+    "description": "Milieu polyvalent, formé au club, Saúl a été un pilier de l’équipe pendant plusieurs saisons.",
+    "stats": {
+      "saisons": "2012–2023",
+      "matchs": 427,
+      "buts": 48,
+      "passes": 26,
+      "trophees": ["Liga", "Europa League x2"]
     }
-},
-
-{
-    nom: "Thomas Partey",
-    surnom: "",
-    role: "Milieu défensif",
-    nationalite: "Ghana",
-    image: "images/partey.jpg",
-    description: "Milieu puissant et discipliné, Thomas Partey a été essentiel dans l’équilibre de l’équipe avant son départ.",
-    stats: {
-        saisons: "2015–2020",
-        matchs: 188,
-        buts: 16,
-        passes: 11,
-        trophees: ["Europa League"]
+  },
+  {
+    "nom": "Thomas Partey",
+    "surnom": "",
+    "role": "Milieu défensif",
+    "nationalite": "Ghana",
+    "image": "images/partey.jpg",
+    "description": "Milieu puissant et discipliné, Thomas Partey a été essentiel dans l’équilibre de l’équipe avant son départ.",
+    "stats": {
+      "saisons": "2015–2020",
+      "matchs": 188,
+      "buts": 16,
+      "passes": 11,
+      "trophees": ["Europa League"]
     }
-},
-
-{
-    nom: "Yannick Carrasco",
-    surnom: "",
-    role: "Ailier",
-    nationalite: "Belgique",
-    image: "images/carrasco.jpg",
-    description: "Joueur explosif et technique, Carrasco est connu pour son but en finale de Ligue des Champions 2016.",
-    stats: {
-        saisons: "2015–2018, 2020–2023",
-        matchs: 265,
-        buts: 47,
-        passes: 36,
-        trophees: ["Liga", "Europa League"]
+  },
+  {
+    "nom": "Yannick Carrasco",
+    "surnom": "",
+    "role": "Ailier",
+    "nationalite": "Belgique",
+    "image": "images/carrasco.jpg",
+    "description": "Joueur explosif et technique, Carrasco est connu pour son but en finale de Ligue des Champions 2016.",
+    "stats": {
+      "saisons": "2015–2018, 2020–2023",
+      "matchs": 265,
+      "buts": 47,
+      "passes": 36,
+      "trophees": ["Liga", "Europa League"]
     }
-},
-
-/* ===================== DÉFENSEURS ===================== */
-
-{
-    nom: "Diego Godín",
-    surnom: "Le Mur",
-    role: "Défenseur central",
-    nationalite: "Uruguay",
-    image: "images/godin.jpg",
-    description: "Capitaine emblématique, Diego Godín est l’un des plus grands défenseurs de l’histoire du club.",
-    stats: {
-        saisons: "2010–2019",
-        matchs: 389,
-        buts: 27,
-        passes: 12,
-        trophees: ["Liga", "Europa League"]
+  },
+  {
+    "nom": "Diego Godín",
+    "surnom": "Le Mur",
+    "role": "Défenseur central",
+    "nationalite": "Uruguay",
+    "image": "images/godin.jpg",
+    "description": "Capitaine emblématique, Diego Godín est l’un des plus grands défenseurs de l’histoire du club.",
+    "stats": {
+      "saisons": "2010–2019",
+      "matchs": 389,
+      "buts": 27,
+      "passes": 12,
+      "trophees": ["Liga", "Europa League"]
     }
-},
-
-{
-    nom: "José María Giménez",
-    surnom: "",
-    role: "Défenseur central",
-    nationalite: "Uruguay",
-    image: "images/gimenez.jpg",
-    description: "Défenseur combatif et fidèle au club, Giménez incarne la continuité de l’école défensive uruguayenne.",
-    stats: {
-        saisons: "2013–",
-        matchs: 320,
-        buts: 13,
-        passes: 6,
-        trophees: ["Liga"]
+  },
+  {
+    "nom": "José María Giménez",
+    "surnom": "",
+    "role": "Défenseur central",
+    "nationalite": "Uruguay",
+    "image": "images/gimenez.jpg",
+    "description": "Défenseur combatif et fidèle au club, Giménez incarne la continuité de l’école défensive uruguayenne.",
+    "stats": {
+      "saisons": "2013–",
+      "matchs": 320,
+      "buts": 13,
+      "passes": 6,
+      "trophees": ["Liga"]
     }
-},
-
-{
-    nom: "Stefan Savić",
-    surnom: "",
-    role: "Défenseur central",
-    nationalite: "Monténégro",
-    image: "images/savic.jpg",
-    description: "Solide et discipliné, Savić est un pilier de la défense de l’Atlético depuis plusieurs saisons.",
-    stats: {
-        saisons: "2015–",
-        matchs: 300,
-        buts: 15,
-        passes: 5,
-        trophees: ["Liga"]
+  },
+  {
+    "nom": "Stefan Savić",
+    "surnom": "",
+    "role": "Défenseur central",
+    "nationalite": "Monténégro",
+    "image": "images/savic.jpg",
+    "description": "Solide et discipliné, Savić est un pilier de la défense de l’Atlético depuis plusieurs saisons.",
+    "stats": {
+      "saisons": "2015–",
+      "matchs": 300,
+      "buts": 15,
+      "passes": 5,
+      "trophees": ["Liga"]
     }
-},
-
-{
-    nom: "Filipe Luís",
-    surnom: "",
-    role: "Latéral gauche",
-    nationalite: "Brésil",
-    image: "images/filipe.jpg",
-    description: "Latéral élégant et intelligent, Filipe Luís a marqué l’ère Simeone par sa régularité.",
-    stats: {
-        saisons: "2010–2014, 2015–2019",
-        matchs: 333,
-        buts: 12,
-        passes: 35,
-        trophees: ["Liga", "Europa League"]
+  },
+  {
+    "nom": "Filipe Luís",
+    "surnom": "",
+    "role": "Latéral gauche",
+    "nationalite": "Brésil",
+    "image": "images/filipe.jpg",
+    "description": "Latéral élégant et intelligent, Filipe Luís a marqué l’ère Simeone par sa régularité.",
+    "stats": {
+      "saisons": "2010–2014, 2015–2019",
+      "matchs": 333,
+      "buts": 12,
+      "passes": 35,
+      "trophees": ["Liga", "Europa League"]
     }
-},
-
-{
-    nom: "Juanfran",
-    surnom: "",
-    role: "Latéral droit",
-    nationalite: "Espagne",
-    image: "images/juanfran.jpg",
-    description: "Latéral infatigable, Juanfran a été une pièce maîtresse de la défense durant les grandes années européennes.",
-    stats: {
-        saisons: "2011–2019",
-        matchs: 355,
-        buts: 16,
-        passes: 38,
-        trophees: ["Liga", "Europa League"]
+  },
+  {
+    "nom": "Juanfran",
+    "surnom": "",
+    "role": "Latéral droit",
+    "nationalite": "Espagne",
+    "image": "images/juanfran.jpg",
+    "description": "Latéral infatigable, Juanfran a été une pièce maîtresse de la défense durant les grandes années européennes.",
+    "stats": {
+      "saisons": "2011–2019",
+      "matchs": 355,
+      "buts": 16,
+      "passes": 38,
+      "trophees": ["Liga", "Europa League"]
     }
-},
-
-{
-    nom: "Lucas Hernández",
-    surnom: "",
-    role: "Défenseur",
-    nationalite: "France",
-    image: "images/lucas.jpg",
-    description: "Formé au club, Lucas Hernández s’est distingué par sa polyvalence et son agressivité défensive.",
-    stats: {
-        saisons: "2014–2019",
-        matchs: 110,
-        buts: 1,
-        passes: 4,
-        trophees: ["Liga"]
+  },
+  {
+    "nom": "Lucas Hernández",
+    "surnom": "",
+    "role": "Défenseur",
+    "nationalite": "France",
+    "image": "images/lucas.jpg",
+    "description": "Formé au club, Lucas Hernández s’est distingué par sa polyvalence et son agressivité défensive.",
+    "stats": {
+      "saisons": "2014–2019",
+      "matchs": 110,
+      "buts": 1,
+      "passes": 4,
+      "trophees": ["Liga"]
     }
-},
-
-/* ===================== GARDIEN ===================== */
-
-{
-    nom: "Jan Oblak",
-    surnom: "",
-    role: "Gardien",
-    nationalite: "Slovénie",
-    image: "images/oblak.jpg",
-    description: "Considéré comme l’un des meilleurs gardiens du monde, Jan Oblak est un pilier absolu de l’Atlético Madrid.",
-    stats: {
-        saisons: "2014–",
-        matchs: 430,
-        buts: 0,
-        passes: 1,
-        trophees: ["Liga", "Zamora x5"]
+  },
+  {
+    "nom": "Jan Oblak",
+    "surnom": "",
+    "role": "Gardien",
+    "nationalite": "Slovénie",
+    "image": "images/oblak.jpg",
+    "description": "Considéré comme l’un des meilleurs gardiens du monde, Jan Oblak est un pilier absolu de l’Atlético Madrid.",
+    "stats": {
+      "saisons": "2014–",
+      "matchs": 430,
+      "buts": 0,
+      "passes": 1,
+      "trophees": ["Liga", "Zamora x5"]
     }
-},
-
-/* ===================== ENTRAÎNEURS & LÉGENDES ===================== */
-
-{
-    nom: "Diego Simeone",
-    surnom: "El Cholo",
-    role: "Entraîneur",
-    nationalite: "Argentine",
-    image: "images/simeone.jpg",
-    description: "Architecte de l’Atlético moderne, Simeone a transformé le club en une référence mondiale.",
-    stats: {
-        saisons: "2011–",
-        matchs: "600+",
-        trophees: ["Liga x2", "Europa League x2", "Supercoupe d’Europe x2"]
+  },
+  {
+    "nom": "Diego Simeone",
+    "surnom": "El Cholo",
+    "role": "Entraîneur",
+    "nationalite": "Argentine",
+    "image": "images/simeone.jpg",
+    "description": "Architecte de l’Atlético moderne, Simeone a transformé le club en une référence mondiale.",
+    "stats": {
+      "saisons": "2011–",
+      "matchs": "600+",
+      "trophees": ["Liga x2", "Europa League x2", "Supercoupe d’Europe x2"]
     }
-},
-
-{
-    nom: "Luis Aragonés",
-    surnom: "",
-    role: "Entraîneur / Légende",
-    nationalite: "Espagne",
-    image: "images/aragones.jpg",
-    description: "Légende absolue du club, Luis Aragonés a marqué l’Atlético comme joueur et entraîneur.",
-    stats: {
-        saisons: "1974–1980",
-        matchs: "—",
-        trophees: ["Liga", "Coupe Intercontinentale"]
+  },
+  {
+    "nom": "Luis Aragonés",
+    "surnom": "",
+    "role": "Entraîneur / Légende",
+    "nationalite": "Espagne",
+    "image": "images/aragones.jpg",
+    "description": "Légende absolue du club, Luis Aragonés a marqué l’Atlético comme joueur et entraîneur.",
+    "stats": {
+      "saisons": "1974–1980",
+      "matchs": "—",
+      "trophees": ["Liga", "Coupe Intercontinentale"]
     }
-},
-
-{
-    nom: "Adelardo",
-    surnom: "",
-    role: "Milieu",
-    nationalite: "Espagne",
-    image: "images/adelardo.jpg",
-    description: "Recordman de matchs avec l’Atlético Madrid, Adelardo est une figure mythique du club.",
-    stats: {
-        saisons: "1959–1976",
-        matchs: 553,
-        buts: 113,
-        passes: "—",
-        trophees: ["Liga x3"]
+  },
+  {
+    "nom": "Adelardo",
+    "surnom": "",
+    "role": "Milieu",
+    "nationalite": "Espagne",
+    "image": "images/adelardo.jpg",
+    "description": "Recordman de matchs avec l’Atlético Madrid, Adelardo est une figure mythique du club.",
+    "stats": {
+      "saisons": "1959–1976",
+      "matchs": 553,
+      "buts": 113,
+      "passes": "—",
+      "trophees": ["Liga x3"]
     }
-}
-
+  }
 ]
-
