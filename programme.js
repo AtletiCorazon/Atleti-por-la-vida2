@@ -103,4 +103,13 @@ function checkAnswer(correct) {
         result.style.color = "red";
     }
 }
-	
+function searchPlayer() {
+    const input = document.getElementById('search').value.toLowerCase();
+    const filtered = playersData.filter(player => 
+        player.nom.toLowerCase().includes(input) ||
+        (player.surnom && player.surnom.toLowerCase().includes(input)) ||
+        (player.role && player.role.toLowerCase().includes(input))
+    );
+    displayPlayers(filtered);
+}	
+
