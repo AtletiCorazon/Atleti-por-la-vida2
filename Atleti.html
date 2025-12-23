@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atleti-por-la-vida</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  body {font-family: Arial, sans-serif; margin:20px; background:#f7f7f7;}
+  h1 {color:#d71a28;}
+  .search-section, .results-section, .quiz-section, .poll-section {margin-bottom:40px;}
+  input[type="text"] {width:80%; padding:10px; font-size:16px;}
+  button {padding:10px 20px; background:#d71a28; color:#fff; border:none; cursor:pointer; margin-top:10px;}
+  .player-card {background:#fff; padding:20px; margin:10px 0; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
+  img {max-width:150px; border-radius:8px;}
+  canvas {max-width:100%; margin-top:10px;}
+</style>
+</head>
+<body>
+
+<h1>Atleti-por-la-vida</h1>
+
+<!-- Section de recherche -->
+<div class="search-section">
+  <h2>Recherche</h2>
+  <input type="text" id="searchInput" placeholder="Tapez un joueur, entraîneur ou championnat...">
+  <button onclick="searchPlayer()">Rechercher</button>
+</div>
+
+<!-- Résultats -->
+<div class="results-section" id="results"></div>
+
+<!-- Quiz -->
+<div class="quiz-section">
+  <h2>Quiz Atlético Madrid</h2>
+  <button onclick="generateQuiz()">Générer une question</button>
+  <div id="quizQuestion" style="margin-top:20px;"></div>
+</div>
+
+<!-- Sondage -->
+<div class="poll-section">
+  <h2>Sondage Atlético Madrid</h2>
+  <button onclick="generatePoll()">Nouvelle question de sondage</button>
+  <div id="pollQuestion" style="margin-top:20px;"></div>
+</div>
+
+<script>
+// JSON complet des joueurs et personnalités
+const players = [
+  // --- Joueurs et personnalités (extraits du JSON final) ---
+[
+  {
+    "type": "joueur",
+    "nom": "Antoine Griezmann",
+    "description": "Attaquant français, surnommé ‘Le Petit Prince’. Reconnu pour sa vision du jeu, sa technique et son sens du but.",
+    "stats": [
+      {"annee":"2014 2015","buts":22,"passesDecisives":10},
+      {"annee":"2015 2016","buts":32,"passesDecisives":12},
+      {"annee":"2016 2017","buts":26,"passesDecisives":9},
+      {"annee":"2017 2018","buts":29,"passesDecisives":11},
+      {"annee":"2018 2019","buts":21,"passesDecisives":10},
+      {"annee":"2019 2020","buts":15,"passesDecisives":5},
+      {"annee":"2020 2021","buts":8,"passesDecisives":5}
+    ],
+    "trophees":["Europa League 2018","Supercoupe de l’UEFA 2018"],
+    "classementLiga":3,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/1/12/Griezmann_2018.jpg"],
+    "anecdotes":["Auteur du but décisif en finale de l’Europa League 2018."],
+    "citations":["Jouer à l’Atlético, c’est faire partie d’une famille."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Diego Godín",
+    "description": "Défenseur central uruguayen, surnommé ‘El Capitán’. Réputé pour son leadership et son jeu aérien.",
+    "stats": [
+      {"annee":"2010 2011","buts":3,"passesDecisives":1},
+      {"annee":"2011 2012","buts":5,"passesDecisives":2},
+      {"annee":"2012 2013","buts":4,"passesDecisives":1},
+      {"annee":"2013 2014","buts":6,"passesDecisives":2},
+      {"annee":"2014 2015","buts":3,"passesDecisives":1},
+      {"annee":"2015 2016","buts":4,"passesDecisives":1},
+      {"annee":"2016 2017","buts":3,"passesDecisives":1},
+      {"annee":"2017 2018","buts":0,"passesDecisives":0},
+      {"annee":"2018 2019","buts":2,"passesDecisives":1}
+    ],
+    "trophees":["Liga 2013/2014","Europa League 2012"],
+    "classementLiga":1,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/6/6c/Diego_Godin_2014.jpg"],
+    "anecdotes":["Souvent décisif dans les grandes rencontres européennes."],
+    "citations":["La défense est le fondement de la victoire."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Luis Suárez",
+    "description": "Attaquant uruguayen, surnommé ‘El Pistolero’. Connu pour son sens du but et sa combativité.",
+    "stats":[
+      {"annee":"2020 2021","buts":21,"passesDecisives":5},
+      {"annee":"2021 2022","buts":11,"passesDecisives":3}
+    ],
+    "trophees":["Liga 2020/2021","Supercoupe d’Espagne 2020"],
+    "classementLiga":1,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/5/5f/Luis_Suarez_2018.jpg"],
+    "anecdotes":["Meilleur buteur de l’Atlético en 2020/2021."],
+    "citations":["Chaque but est un pas vers la victoire."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Jan Oblak",
+    "description": "Gardien slovène surnommé ‘Le Mur’. Considéré comme l’un des meilleurs gardiens du monde.",
+    "stats":[],
+    "trophees":["Supercoupe d’Espagne 2014","Copa del Rey 2013"],
+    "classementLiga":1,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/b/bb/Jan_Oblak_2016.jpg"],
+    "anecdotes":["Détient plusieurs records de clean sheets en Liga."],
+    "citations":["Un bon arrêt change le cours d’un match."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Filipe Luis",
+    "description": "Arrière gauche brésilien surnommé ‘Le Faucon’. Polyvalent et technique.",
+    "stats":[
+      {"annee":"2010 2011","buts":2,"passesDecisives":5},
+      {"annee":"2011 2012","buts":1,"passesDecisives":6},
+      {"annee":"2012 2013","buts":1,"passesDecisives":4},
+      {"annee":"2013 2014","buts":2,"passesDecisives":5},
+      {"annee":"2014 2015","buts":0,"passesDecisives":3}
+    ],
+    "trophees":["Liga 2013/2014","Europa League 2012"],
+    "classementLiga":1,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/8/8b/Filipe_Luis_2014.jpg"],
+    "anecdotes":["Solide dans les duels et utile offensivement."],
+    "citations":["Défendre, puis attaquer."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Juanfran",
+    "description": "Défenseur droit espagnol robuste, connu pour ses montées et centres précis.",
+    "stats":[
+      {"annee":"2011 2012","buts":1,"passesDecisives":3},
+      {"annee":"2012 2013","buts":1,"passesDecisives":4},
+      {"annee":"2013 2014","buts":2,"passesDecisives":5}
+    ],
+    "trophees":["Liga 2013/2014","Europa League 2012"],
+    "classementLiga":1,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/5/5e/Juanfran_2014.jpg"],
+    "anecdotes":["Apport offensif grâce à ses centres précis."],
+    "citations":["Chaque action compte."]
+  },
+  {
+    "type": "joueur",
+    "nom": "José María Giménez",
+    "description": "Défenseur central uruguayen surnommé ‘Le Roc’. Leader défensif solide.",
+    "stats":[
+      {"annee":"2013 2014","buts":1,"passesDecisives":0},
+      {"annee":"2014 2015","buts":2,"passesDecisives":1},
+      {"annee":"2015 2016","buts":1,"passesDecisives":0}
+    ],
+    "trophees":["Supercoupe d’Espagne 2014"],
+    "classementLiga":3,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/4/4c/Gimenez_2018.jpg"],
+    "anecdotes":["Leader défensif malgré son jeune âge."],
+    "citations":["La concentration est la clé."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Yannick Carrasco",
+    "description": "Ailier belge surnommé ‘El Rayo’. Rapide et technique.",
+    "stats":[
+      {"annee":"2015 2016","buts":9,"passesDecisives":5},
+      {"annee":"2016 2017","buts":7,"passesDecisives":6}
+    ],
+    "trophees":["Liga 2020/2021"],
+    "classementLiga":1,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/9/99/Carrasco_2018.jpg"],
+    "anecdotes":["Connu pour ses dribbles et ses appels rapides derrière la défense."],
+    "citations":["L’intensité est la clé de l’attaque."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Stefan Savić",
+    "description": "Défenseur monténégrin robuste surnommé ‘Le Roc des Balkans’.",
+    "stats":[
+      {"annee":"2015 2016","buts":2,"passesDecisives":1},
+      {"annee":"2016 2017","buts":1,"passesDecisives":0}
+    ],
+    "trophees":["Liga 2020/2021"],
+    "classementLiga":1,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/2/24/Savic_2018.jpg"],
+    "anecdotes":["Connu pour son sens du placement et sa sérénité sous pression."],
+    "citations":["La sérénité mène à la solidité."]
+  }
+  
+
+{
+    "type": "joueur",
+    "nom": "Kevin Gameiro",
+    "description": "Attaquant français surnommé ‘Le Renard des Surfaces’. Agile et efficace dans la surface adverse.",
+    "stats":[
+      {"annee":"2011 2012","buts":16,"passesDecisives":4},
+      {"annee":"2012 2013","buts":15,"passesDecisives":5},
+      {"annee":"2013 2014","buts":18,"passesDecisives":6}
+    ],
+    "trophees":["Europa League 2012"],
+    "classementLiga":3,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/7/7b/Gameiro_2013.jpg"],
+    "anecdotes":["Souvent décisif lors des matches européens."],
+    "citations":["Toujours se placer au bon endroit au bon moment."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Fernando Torres",
+    "description": "Attaquant espagnol légendaire surnommé ‘El Niño’. Rapide, technique et excellent finisseur.",
+    "stats":[
+      {"annee":"2007 2008","buts":15,"passesDecisives":5},
+      {"annee":"2008 2009","buts":18,"passesDecisives":6},
+      {"annee":"2011 2012","buts":14,"passesDecisives":4}
+    ],
+    "trophees":["Europa League 2010, 2012","Supercoupe d’Europe 2010"],
+    "classementLiga":2,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/1/18/Fernando_Torres_2010.jpg"],
+    "anecdotes":["Auteur de buts décisifs en finales européennes."],
+    "citations":["La vitesse et l’instinct sont mes armes."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Diego Forlán",
+    "description": "Attaquant uruguayen surnommé ‘El Cacha’. Tireur de coups francs et finisseur hors pair.",
+    "stats":[
+      {"annee":"2007 2008","buts":16,"passesDecisives":7},
+      {"annee":"2008 2009","buts":18,"passesDecisives":6}
+    ],
+    "trophees":["Europa League 2010"],
+    "classementLiga":3,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/5/5e/Diego_Forlan_2009.jpg"],
+    "anecdotes":["Ballon d’Or Sudaméricain en 2004."],
+    "citations":["Un but est la meilleure réponse à l’adversaire."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Radamel Falcao",
+    "description": "Attaquant colombien surnommé ‘El Tigre’. Puissant et décisif dans la surface.",
+    "stats":[
+      {"annee":"2011 2012","buts":24,"passesDecisives":5},
+      {"annee":"2012 2013","buts":28,"passesDecisives":7}
+    ],
+    "trophees":["Europa League 2012, 2018","Supercoupe d’Europe 2012"],
+    "classementLiga":2,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/3/34/Falcao_2012.jpg"],
+    "anecdotes":["Meilleur buteur de l’Europa League 2012."],
+    "citations":["L’efficacité prime sur tout le reste."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Gabi",
+    "description": "Milieu espagnol surnommé ‘Le Stratège’. Leader du milieu et récupérateur efficace.",
+    "stats":[
+      {"annee":"2009 2010","buts":3,"passesDecisives":5},
+      {"annee":"2010 2011","buts":2,"passesDecisives":6},
+      {"annee":"2011 2012","buts":4,"passesDecisives":5}
+    ],
+    "trophees":["Liga 2013/2014","Europa League 2012"],
+    "classementLiga":1,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/6/66/Gabi_2014.jpg"],
+    "anecdotes":["Capitaine emblématique de l’Atlético."],
+    "citations":["Le travail collectif est la clé."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Saúl Ñíguez",
+    "description": "Milieu polyvalent espagnol surnommé ‘Saúlito’. Polyvalent et très dynamique.",
+    "stats":[
+      {"annee":"2012 2013","buts":2,"passesDecisives":3},
+      {"annee":"2013 2014","buts":4,"passesDecisives":5},
+      {"annee":"2014 2015","buts":6,"passesDecisives":6}
+    ],
+    "trophees":["Liga 2020/2021"],
+    "classementLiga":1,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/f/f6/Saul_2018.jpg"],
+    "anecdotes":["Capable de marquer des buts importants."],
+    "citations":["Je joue pour l’équipe avant tout."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Lucas Hernández",
+    "description": "Défenseur français surnommé ‘Le Mur Bleu’. Polyvalent et solide défensivement.",
+    "stats":[
+      {"annee":"2015 2016","buts":1,"passesDecisives":1},
+      {"annee":"2016 2017","buts":0,"passesDecisives":2},
+      {"annee":"2017 2018","buts":1,"passesDecisives":1}
+    ],
+    "trophees":["Liga 2020/2021","Supercoupe d’Espagne 2018"],
+    "classementLiga":1,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/2/23/Lucas_Hernandez_2018.jpg"],
+    "anecdotes":["Capable de jouer arrière gauche ou central."],
+    "citations":["La polyvalence est une force."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Thomas Partey",
+    "description": "Milieu ghanéen surnommé ‘El Tractor’. Puissant et récupérateur.",
+    "stats":[
+      {"annee":"2016 2017","buts":2,"passesDecisives":3},
+      {"annee":"2017 2018","buts":3,"passesDecisives":4},
+      {"annee":"2018 2019","buts":4,"passesDecisives":5}
+    ],
+    "trophees":["Supercoupe d’Espagne 2018"],
+    "classementLiga":2,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/f/f5/Thomas_Partey_2018.jpg"],
+    "anecdotes":["Force physique et récupération impressionnante."],
+    "citations":["Le milieu de terrain est le cœur du jeu."]
+  },
+  {
+    "type": "joueur",
+    "nom": "Julián Álvarez",
+    "description": "Attaquant argentin surnommé ‘La Araña’. Rapide et habile devant le but.",
+    "stats":[
+      {"annee":"2022 2023","buts":14,"passesDecisives":7},
+      {"annee":"2023 2024","buts":18,"passesDecisives":5}
+    ],
+    "trophees":["Supercoupe d’Espagne 2023"],
+    "classementLiga":3,
+    "photos":["https://upload.wikimedia.org/wikipedia/commons/8/80/Julian_Alvarez_2023.jpg"],
+    "anecdotes":["Début très prometteur à l’Atlético."],
+    "citations":["Chaque match est une opportunité de marquer."]
+  }
+]
+;
+
+// Recherche
+function searchPlayer() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const resultsDiv = document.getElementById('results');
+  resultsDiv.innerHTML = '';
+
+  const filtered = players.filter(p => p.nom.toLowerCase().includes(query));
+  if(filtered.length === 0) {
+    resultsDiv.innerHTML = '<p>Aucun résultat trouvé.</p>';
+    return;
+  }
+
+  filtered.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'player-card';
+    let html = `<h3>${p.nom}</h3>`;
+    if(p.photos) html += `<img src="${p.photos[0]}" alt="${p.nom}">`;
+    html += `<p>${p.description || ''}</p>`;
+    if(p.trophees) html += `<p><strong>Trophées :</strong> ${p.trophees.join(', ')}</p>`;
+    if(p.anecdotes) html += `<p><strong>Anecdotes :</strong> ${p.anecdotes.join(' | ')}</p>`;
+    card.innerHTML = html;
+
+    if(p.stats && p.stats.length > 0) {
+      const canvas = document.createElement('canvas');
+      card.appendChild(canvas);
+      const ctx = canvas.getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: p.stats.map(s => s.annee),
+          datasets: [
+            {label:'Buts', data:p.stats.map(s => s.buts), backgroundColor:'#d71a28'},
+            {label:'Passes décisives', data:p.stats.map(s => s.passesDecisives), backgroundColor:'#1a73e8'}
+          ]
+        },
+        options: {responsive:true, scales:{y:{beginAtZero:true}}}
+      });
+    }
+
+    resultsDiv.appendChild(card);
+  });
+}
+
+// Quiz aléatoire
+function generateQuiz() {
+  const player = players[Math.floor(Math.random()*players.length)];
+  if(!player.stats || player.stats.length===0) return;
+  const stat = player.stats[Math.floor(Math.random()*player.stats.length)];
+  const question = `Combien de buts ${player.nom} a marqué en ${stat.annee} ?`;
+  const answer = stat.buts;
+  document.getElementById('quizQuestion').innerHTML = `<p>${question}</p><p><em>Réponse : ${answer}</em></p>`;
+}
+
+// Sondage aléatoire
+function generatePoll() {
+  const player = players[Math.floor(Math.random()*players.length)];
+  const options = ["Très bon","Bon","Moyen","Mauvais"];
+  const question = `Que pensez-vous de la performance de ${player.nom} ?`;
+  document.getElementById('pollQuestion').innerHTML = `<p>${question}</p>${options.map(o=>`<button>${o}</button>`).join(' ')}`;
+}
+</script>
+
+</body>
+</html>
+
